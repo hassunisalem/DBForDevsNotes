@@ -1,7 +1,7 @@
 # DBForDevsNotes
 
 
-The course focuses on five different database types:
+## The course focuses on five different database types:
 
 
 ### Relational databases
