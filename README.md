@@ -18,7 +18,10 @@ A column-oriented DBMS or columnar DBMS is a database management system (DBMS) t
 ### Document databases
 
 A document-oriented database, or document store, is a computer program and data storage system designed for storing, 
-retrieving and managing document-oriented information, also known as semi-structured data
+retrieving and managing document-oriented information, also known as semi-structured data. Documents can contain nested structures,
+and so they exhibit a high degree of flexibility, allowing for variable domains.
+The system imposes few restrictions on incoming data, as long as it meets
+the basic requirement of being expressible as a document.
 
 
 ### Graph databases
@@ -30,3 +33,18 @@ In computing, a graph database (GDB) is a database that uses graph structures fo
 ### Key-value stores
 
 A key–value database, or key–value store, is a data storage paradigm designed for storing, retrieving, and managing associative arrays, and a data structure more commonly known today as a dictionary or hash table.
+
+Redis - gains amazing performance in exchange for increased risk of data loss in the case of a
+hardware failure. 
+
+
+
+## Additional notes
+
+
+### PostgreSQL
+
+PostgreSQL (or just “Postgres”) is a relational database management system
+(or RDBMS for short).Relational databases are set-theory-based systems in
+which data is stored in two-dimensional tables consisting of data rows and
+strictly enforced column types.
