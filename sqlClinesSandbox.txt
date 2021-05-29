@@ -1,0 +1,56 @@
+CREATE TABLE address (
+street varchar(255) PRIMARY KEY,
+zipcode int,
+city varchar(255));
+
+
+
+CREATE TABLE pet (
+id SERIAL PRIMARY KEY,
+name varchar(255),
+age int,
+caretaker_id FOREIGN KEY (street)
+REFERENCES address (street) MATCH FULL
+);
+
+CREATE TABLE IF NOT EXISTS Addresses (
+	address_id SERIAL PRIMARY KEY,
+	street varchar(100) NOT NULL,
+	city_code int REFERENCES Cities NOT NULL
+);
+
+CREATE TABLE caretaker (
+caretaker_id SERIAL PRIMARY KEY,
+name varchar(255),
+address_id int REFERENCES addresses
+);
+
+DROP TABLE IF EXISTS Vets;
+DROP TABLE IF EXISTS Addresses;
+DROP TABLE IF EXISTS Cities;
+
+CREATE TABLE IF NOT EXISTS Cities (
+	city_code int PRIMARY KEY,
+	name varchar(100) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Addresses (
+	address_id SERIAL PRIMARY KEY,
+	street varchar(100) NOT NULL,
+	city_code int REFERENCES Cities NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Vets (
+	vet_cvr char(8) PRIMARY KEY,
+	name varchar(80) NOT NULL,
+	address_id SERIAL REFERENCES Addresses NOT NULL
+);
+
+
+
+CREATE TABLE IF NOT EXISTS Pets (
+	pet_id SERIAL PRIMARY KEY,
+	name varchar(80) NOT NULL,
+	age int NOT NULL,
+	caretaker_id SERIAL REFERENCES caretaker NOT NULL
+);
